@@ -222,19 +222,19 @@ GROUP BY shift
 
 ## Findings
 
-- **Data Quality Improvements: All missing or null values were removed, and a primary key constraint was added to maintain data integrity.
-- **Sales Insights: Sales were strong across categories like Clothing, Beauty, and Electronics, with Clothing leading in total transactions.
-- **High-Value Transactions: Several transactions exceeded 1000 in total sales, showing that premium purchases contribute significantly to revenue.
-- **Gender-Based Trends: Male and female customers displayed distinct category preferences—females favored Beauty and Clothing, while males dominated Electronics sales.
-- **Peak Hour Analysis: When categorized by time of day, Afternoon emerged as the most active sales period, followed by Evening transactions.
-- **Customer Insights: A small group of high-spending customers accounted for the largest portion of total sales, offering opportunities for loyalty programs and targeted marketing.
+- Data Quality Improvements: All missing or null values were removed, and a primary key constraint was added to maintain data integrity.
+- Sales Insights: Sales were strong across categories like Clothing, Beauty, and Electronics, with Clothing leading in total transactions.
+- High-Value Transactions: Several transactions exceeded 1000 in total sales, showing that premium purchases contribute significantly to revenue.
+- Gender-Based Trends: Male and female customers displayed distinct category preferences—females favored Beauty and Clothing, while males dominated Electronics sales.
+- Peak Hour Analysis: When categorized by time of day, Afternoon emerged as the most active sales period, followed by Evening transactions.
+- Customer Insights: A small group of high-spending customers accounted for the largest portion of total sales, offering opportunities for loyalty programs and targeted marketing.
 
 ## Reports
 
-- **Sales Summary Report: Captures category-wise sales totals, transaction counts, and high-value order frequency.
-- **Customer Demographics Report: Highlights gender-based and age-based purchasing patterns to understand target audience behavior.
-- **Sales Trend Report: Shows monthly and shift-based variations to pinpoint high-performing sales periods.
-- **Customer Value Report: Identifies top customers by total spending and transaction frequency, aiding in personalized marketing strategies.
+- Sales Summary Report: Captures category-wise sales totals, transaction counts, and high-value order frequency.
+- Customer Demographics Report: Highlights gender-based and age-based purchasing patterns to understand target audience behavior.
+- Sales Trend Report: Shows monthly and shift-based variations to pinpoint high-performing sales periods.
+- Customer Value Report: Identifies top customers by total spending and transaction frequency, aiding in personalized marketing strategies.
   
 ## Conclusion
 
