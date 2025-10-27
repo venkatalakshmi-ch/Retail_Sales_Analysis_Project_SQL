@@ -4,7 +4,7 @@
 
 **Project Title**: Retail Sales Analysis  
 **Level**: Beginner  
-**Database**: `p1_retail_db`
+**Database**: `retail_sales_db`
 
 This project is designed to demonstrate SQL skills and techniques typically used by data analysts to explore, clean, and analyze retail sales data. The project involves setting up a retail sales database, performing exploratory data analysis (EDA), and answering specific business questions through SQL queries. This project is ideal for those who are starting their journey in data analysis and want to build a solid foundation in SQL.
 
@@ -19,11 +19,11 @@ This project is designed to demonstrate SQL skills and techniques typically used
 
 ### 1. Database Setup
 
-- **Database Creation**: The project starts by creating a database named `p1_retail_db`.
+- **Database Creation**: The project starts by creating a database named `retail_sales_db`.
 - **Table Creation**: A table named `retail_sales` is created to store the sales data. The table structure includes columns for transaction ID, sale date, sale time, customer ID, gender, age, product category, quantity sold, price per unit, cost of goods sold (COGS), and total sale amount.
 
 ```sql
-CREATE DATABASE p1_retail_db;
+CREATE DATABASE retail_sales_db;
 
 CREATE TABLE retail_sales
 (
@@ -53,17 +53,53 @@ SELECT COUNT(*) FROM retail_sales;
 SELECT COUNT(DISTINCT customer_id) FROM retail_sales;
 SELECT DISTINCT category FROM retail_sales;
 
-SELECT * FROM retail_sales
-WHERE 
-    sale_date IS NULL OR sale_time IS NULL OR customer_id IS NULL OR 
-    gender IS NULL OR age IS NULL OR category IS NULL OR 
-    quantity IS NULL OR price_per_unit IS NULL OR cogs IS NULL;
+select * from retail_sales
+where
+    transactions_id IS NULL
+	OR
+	sale_date IS NULL
+	OR
+	sale_time IS NULL
+	OR
+	customer_id IS NULL
+	OR
+	gender IS NULL
+	OR
+	age IS NULL
+	OR
+	category IS NULL
+	OR
+	quantity IS NULL
+	OR
+	price_per_unit IS NULL
+	OR
+	cogs IS NULL
+	OR
+	total_sale IS NULL;
 
-DELETE FROM retail_sales
-WHERE 
-    sale_date IS NULL OR sale_time IS NULL OR customer_id IS NULL OR 
-    gender IS NULL OR age IS NULL OR category IS NULL OR 
-    quantity IS NULL OR price_per_unit IS NULL OR cogs IS NULL;
+Delete from retail_sales
+where
+    transactions_id IS NULL
+	OR
+	sale_date IS NULL
+	OR
+	sale_time IS NULL
+	OR
+	customer_id IS NULL
+	OR
+	gender IS NULL
+	OR
+	age IS NULL
+	OR
+	category IS NULL
+	OR
+	quantity IS NULL
+	OR
+	price_per_unit IS NULL
+	OR
+	cogs IS NULL
+	OR
+	total_sale IS NULL;
 ```
 
 ### 3. Data Analysis & Findings
@@ -121,10 +157,7 @@ SELECT
     gender,
     COUNT(*) as total_trans
 FROM retail_sales
-GROUP 
-    BY 
-    category,
-    gender
+GROUP BY 2,3
 ORDER BY 1
 ```
 
@@ -162,9 +195,9 @@ LIMIT 5
 ```sql
 SELECT 
     category,    
-    COUNT(DISTINCT customer_id) as cnt_unique_cs
+    COUNT(DISTINCT customer_id) as unique_customer
 FROM retail_sales
-GROUP BY category
+GROUP BY 2
 ```
 
 10. **Write a SQL query to create each shift and number of orders (Example Morning <12, Afternoon Between 12 & 17, Evening >17)**:
@@ -189,39 +222,28 @@ GROUP BY shift
 
 ## Findings
 
-- **Customer Demographics**: The dataset includes customers from various age groups, with sales distributed across different categories such as Clothing and Beauty.
-- **High-Value Transactions**: Several transactions had a total sale amount greater than 1000, indicating premium purchases.
-- **Sales Trends**: Monthly analysis shows variations in sales, helping identify peak seasons.
-- **Customer Insights**: The analysis identifies the top-spending customers and the most popular product categories.
+- **Data Quality Improvements: All missing or null values were removed, and a primary key constraint was added to maintain data integrity.
+- **Sales Insights: Sales were strong across categories like Clothing, Beauty, and Electronics, with Clothing leading in total transactions.
+- **High-Value Transactions: Several transactions exceeded 1000 in total sales, showing that premium purchases contribute significantly to revenue.
+- **Gender-Based Trends: Male and female customers displayed distinct category preferences—females favored Beauty and Clothing, while males dominated Electronics sales.
+- **Peak Hour Analysis: When categorized by time of day, Afternoon emerged as the most active sales period, followed by Evening transactions.
+- **Customer Insights: A small group of high-spending customers accounted for the largest portion of total sales, offering opportunities for loyalty programs and targeted marketing.
 
 ## Reports
 
-- **Sales Summary**: A detailed report summarizing total sales, customer demographics, and category performance.
-- **Trend Analysis**: Insights into sales trends across different months and shifts.
-- **Customer Insights**: Reports on top customers and unique customer counts per category.
-
+- **Sales Summary Report: Captures category-wise sales totals, transaction counts, and high-value order frequency.
+- **Customer Demographics Report: Highlights gender-based and age-based purchasing patterns to understand target audience behavior.
+- **Sales Trend Report: Shows monthly and shift-based variations to pinpoint high-performing sales periods.
+- **Customer Value Report: Identifies top customers by total spending and transaction frequency, aiding in personalized marketing strategies.
+  
 ## Conclusion
 
-This project serves as a comprehensive introduction to SQL for data analysts, covering database setup, data cleaning, exploratory data analysis, and business-driven SQL queries. The findings from this project can help drive business decisions by understanding sales patterns, customer behavior, and product performance.
+This project demonstrates the complete data analytics workflow using PostgreSQL and pgAdmin — from data cleaning and constraint setup to generating actionable insights through SQL queries.
+The findings reveal clear patterns in customer behavior, product category performance, and sales timing, helping guide data-driven retail strategies.
+Overall, this project highlights SQL’s critical role in extracting business intelligence and supports decision-making in a retail environment.
 
-## How to Use
 
-1. **Clone the Repository**: Clone this project repository from GitHub.
-2. **Set Up the Database**: Run the SQL scripts provided in the `database_setup.sql` file to create and populate the database.
-3. **Run the Queries**: Use the SQL queries provided in the `analysis_queries.sql` file to perform your analysis.
-4. **Explore and Modify**: Feel free to modify the queries to explore different aspects of the dataset or answer additional business questions.
+## Author - Lakshmi
 
-## Author - Zero Analyst
+Aspiring Data Analyst skilled in SQL, PostgreSQL, and Data Visualization. Passionate about turning raw data into actionable business insights.
 
-This project is part of my portfolio, showcasing the SQL skills essential for data analyst roles. If you have any questions, feedback, or would like to collaborate, feel free to get in touch!
-
-### Stay Updated and Join the Community
-
-For more content on SQL, data analysis, and other data-related topics, make sure to follow me on social media and join our community:
-
-- **YouTube**: [Subscribe to my channel for tutorials and insights](https://www.youtube.com/@zero_analyst)
-- **Instagram**: [Follow me for daily tips and updates](https://www.instagram.com/zero_analyst/)
-- **LinkedIn**: [Connect with me professionally](https://www.linkedin.com/in/najirr)
-- **Discord**: [Join our community to learn and grow together](https://discord.gg/36h5f2Z5PK)
-
-Thank you for your support, and I look forward to connecting with you!
